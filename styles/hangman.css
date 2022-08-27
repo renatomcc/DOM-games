@@ -1,0 +1,142 @@
+#Hangman {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 35px;
+    color: orange;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
+    gap: 50px;
+    margin-top: 70px;
+}
+
+#gameContainer {
+    display: flex;
+}
+
+#hagmanUserGuess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hangmanUserInput {
+    font-size: 30px;
+    width: 30px;
+}
+
+#submitButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+#guessedLetters {
+    width: 300px;
+    height: 50px;
+    color: rgba(223, 55, 55, 0.781);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+#hangmanKeyboard {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 10fr;
+}
+
+#hangmanKeyboard div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#hm0,
+#hm1,
+#hm2,
+#hm3,
+#hm4,
+#hm5,
+#hm6,
+#hm7,
+#hm8,
+#hm9 {
+    grid-row-start: 1;
+}
+
+#hm10,
+#hm11,
+#hm12,
+#hm13,
+#hm14,
+#hm15,
+#hm16,
+#hm17,
+#hm18 {
+    grid-row-start: 2;
+}
+
+#hm19,
+#hm20,
+#hm21,
+#hm22,
+#hm23,
+#hm24,
+#hm25,
+#hm26 {
+    grid-row-start: 3;
+}
+
+#hangmanContainer {
+    width: 200px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 20px;
+    margin-bottom: 60px;
+}
+
+.hmBase {
+    stroke: black;
+    stroke-width: 3
+}
+
+.hmBody {
+    stroke-width: 4;
+    fill: rgb(255, 255, 255);
+}
+
+#hm1, #hm2, #hm3, #hm4,#hm5, #hm6 {
+    stroke-width: 4;
+    display: none;
+}
+
+#base3{
+    stroke-width: 6;
+}
+
+#hangmanTip{
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}

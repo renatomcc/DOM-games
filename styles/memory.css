@@ -1,0 +1,37 @@
+#Memory {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+#memoryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    gap:10px
+}
+
+#memoryContainer div {
+    width: 120px;
+    height: 150px; 
+}
+
+.memoryBlock{
+    background-color: black;
+}
+
+#memory1, #memory2{
+    background-image: url('../images/bee.png');
+    background-size: contain;
+}
+
+#memory3,#memory4 {
+    background-image: url('../images/cicada.png');
+    background-size: contain;
+} 
+
+#memory5, #memory6{
+    background-image: url('../images/cricket.png');
+    background-size: contain;
+}

@@ -1,0 +1,55 @@
+#Game2048 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    margin-top: 70px;
+}
+
+.game2048row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding: 5px;
+}
+
+.game2048Square {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    background-color: #CCC0B3;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+#Game2048Reset button {
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgb(223, 146, 5);
+    font-size: 18px;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px 0px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+#Game2048Background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color:#BBADA0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}

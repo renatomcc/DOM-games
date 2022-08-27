@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/tictactoe.css">
+    <link rel="stylesheet" href="./styles/hangman.css">
+    <link rel="stylesheet" href="./styles/memory.css">
+    <link rel="stylesheet" href="./styles/wordle.css">
+    <link rel="stylesheet" href="./styles/genius.css">
+    <link rel="stylesheet" href="./styles/2048.css">
+    <link rel="stylesheet" href="./styles/flappybird.css">
+    <link rel="stylesheet" href="./styles/rps.css">
+    <script src="./scripts/tictactoe.js" defer></script>
+    <script src="./scripts/hangman.js" defer></script>
+    <script src="./scripts/global.js" defer></script>
+    <script src="./scripts/memory.js" defer></script>
+    <script src="./scripts/wordle.js" defer></script>
+    <script src="./scripts/genius.js" defer></script>
+    <script src="./scripts/2048.js" defer></script>
+    <script src="./scripts/flappybird.js" defer></script>
+    <script src="./scripts/rps.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/favIcon.png">
+    <title>DOM Games</title>
+</head>
+
+<body id="body">
+    <div class="container" id="container">
+        <div id="menuBtn">
+            <img src="./images/menuArrow.png" alt="Back to Menu" id="backToMenuBtn" onclick="menuCall()">
+        </div>
+        <div id="menuScreen">
+            <spam>Choose your game</spam>
+            <div id="buttons">
+                <div class="MenuScreenGameDiv" id="TicTacToeGameDiv">
+                    <label>TIC TAC TOE</label>
+                    <input type="image" src="./images/tictactoe.png" onclick="ticTacToeCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="Game2048GameDiv">
+                    <label>2048</label>
+                    <input type="image" src="./images/2048.png" onclick="game2048Call()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="FlappyBirdGameDiv">
+                    <label>FLAPPY BIRD</label>
+                    <input type="image" src="./images/flappybird.png" onclick="flappyBirdCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="RpsGameDiv">
+                    <label>RPS</label>
+                    <input type="image" src="./images/rps.png" onclick="rpsCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="HangmanGameDiv">
+                    <label>HANGMAN</label>
+                    <input type="image" src="./images/hangman.png" onclick="hangManCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="WordleGameDiv">
+                    <label>WORDLE</label>
+                    <input type="image" src="./images/wordle.png" onclick="wordleCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="MemoryGameDiv">
+                    <label>MEMORY</label>
+                    <input type="image" src="./images/memory.png" onclick="memoryCall()" />
+                </div>
+                <div class="MenuScreenGameDiv" id="GeniusGameDiv">
+                    <label>GENIUS</label>
+                    <input type="image" src="./images/genius.png" onclick="geniusCall()" />
+                </div>
+            </div>
+        </div>
+        <div id="TicTacToe">
+            <div class="ticTacPlayers">
+                <div>
+                    <spam>Player 1</spam>
+                </div>
+                <div>
+                    <spam>Player 2</spam>
+                </div>
+            </div>
+            <div class="ticTacPlayersScores">
+                <div>
+                    <spam id="ticTacScoreP1">0</spam>
+                </div>
+                <div>
+                    <spam id="ticTacScoreP2">0</spam>
+                </div>
+            </div>
+            <div class="ticTacBlocks">
+                <div id="ticTacblock1" onclick=ticTacBlock1()></div>
+                <div id="ticTacblock2" onclick=ticTacBlock2()></div>
+                <div id="ticTacblock3" onclick=ticTacBlock3()></div>
+                <div id="ticTacblock4" onclick=ticTacBlock4()></div>
+                <div id="ticTacblock5" onclick=ticTacBlock5()></div>
+                <div id="ticTacblock6" onclick=ticTacBlock6()></div>
+                <div id="ticTacblock7" onclick=ticTacBlock7()></div>
+                <div id="ticTacblock8" onclick=ticTacBlock8()></div>
+                <div id="ticTacblock9" onclick=ticTacBlock9()></div>
+            </div>
+            <div id="ticTacStart">
+                <spam>Choose start:</spam>
+                <button type="button" onclick=ticTacXChoose()>X</button>
+                <button type="button" onclick=tictacOChoose()>O</button>
+            </div>
+        </div>
+        <div id="Hangman">
+            <div id="hangmanContainer">
+                <svg height="210" width="500">
+                    <!-- base -->
+                    <line x1="0" y1="200" x2="200" y2="200" class="hmBase" />
+                    <line x1="100" y1="200" x2="100" y2="0" class="hmBase" />
+                    <line x1="100" y1="0" x2="200" y2="0" class="hmBase" id="base3" />
+                    <line x1="200" y1="0" x2="200" y2="50" class="hmBase" />
+                    <!-- body -->
+                    <circle cx="200" cy="50" r="15" stroke="black" class="hmBody" id="hm1" />
+                    <line x1="200" y1="65" x2="200" y2="130" class="hmBase" id="hm2" />
+                    <line x1="200" y1="65" x2="220" y2="110" class="hmBase" id="hm3" />
+                    <line x1="200" y1="65" x2="180" y2="110" class="hmBase" id="hm4" />
+                    <line x1="200" y1="130" x2="180" y2="160" class="hmBase" id="hm5" />
+                    <line x1="200" y1="130" x2="220" y2="160" class="hmBase" id="hm6" />
+
+                </svg>
+            </div>
+            <div id="gameContainer"></div>
+            <div id="guessedLetters"></div>
+            <div id="hangmanKeyboard">
+            </div>
+            <div id="hangmanTip">You can check the word on console</div>
+        </div>
+        <div id="Memory">
+            <div id="memoryContainer"></div>
+        </div>
+        <div id="Wordle">
+            <div id="wordleBlocks">
+                <div id="wordleUserGuess">
+                    <label>Guess word: </label>
+                    <input type="text" id="wordleGuess">
+                </div>
+                <div id="wordleReset"><button type="button" onclick="wordleReset()">Play again!</button></div>
+                <div id="wordleGame">
+                </div>
+                <div id="wordleResult">The word was: <div id="wordleWordResult"></div>
+                </div>
+                <div id="hangmanTip">You can check the word on console</div>
+            </div>
+        </div>
+        <div id="Genius">
+            <div id="geniusGame">
+                <div class="geniusOption" id="geniusYellow">
+                    <button type="button" id="geniusYellowButton" onclick="geniusGetUserSequence(0)"></button>
+                </div>
+                <div class="geniusOption" id="geniusRed">
+                    <button type="button" id="geniusRedButton" onclick="geniusGetUserSequence(1)"></button>
+                </div>
+                <div class="geniusOption" id="geniusGreen">
+                    <button type="button" id="geniusGreenButton" onclick="geniusGetUserSequence(2)"></button>
+                </div>
+                <div class="geniusOption" id="geniusBlue">
+                    <button type="button" id="geniusBlueButton" onclick="geniusGetUserSequence(3)"></button>
+                </div>
+                <div id="geniusStartGame" onclick="geniusStartGame()">
+                    START
+                </div>
+            </div>
+            <div class="geniusScore">
+                <label>Score:</label>
+                <span id="geniusPlayerScore">0</span>
+            </div>
+
+            <div id="geniusPlayAgain">
+                <button id="geniusButtonPlayAgain" onclick="geniusPlayAgain()">Play again!</button>
+            </div>
+        </div>
+        <div id="Game2048">
+            <div id="Game2048Background">
+                <div id="Game2048Container">
+                </div>
+                <div id="Game2048Reset">
+                    <button type="button" onclick="game2048Reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div id="FlappyBird">
+            <div id="FlappyBirdCanva">
+                <div id="FlappyBirdBird"></div>
+                <div id="FlappyBirdColumn"></div>
+                <div id="FlappyBirdColumn2"></div>
+            </div>
+            <div>
+                <label>Score: </label>
+                <span id="FlappyBirdScore">0</span>
+            </div>
+        </div>
+        <div id="Rps">
+            <div id="rpsComputer">
+                <div id="rpsComputerChoice"></div>
+            </div>
+            <div id="rpsResult"></div>
+            <div id="rpsPAButton">
+                <button type="button" id="rpsButton" onclick="rpsPlayAgain()"> Play Again </button>
+            </div>
+            <div id="rpsUserChoice">
+                <div class="imghover" id="rpsRock" onclick="rpsRockChoose()">
+                    <img src="./images/rps_rock.png" alt="Rock">
+                </div>
+                <div class="imghover" id="rpsPaper" onclick="rpsPaperChoose()">
+                    <img src="./images/rps_paper.png" alt="Paper">
+                </div>
+                <div class="imghover" id="rpsScissor" onclick="rpsScissorChoose()">
+                    <img src="./images/rps_scissors.png" alt="Scissor">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+#FlappyBird {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 70px;
+}
+
+#FlappyBirdCanva {
+    border: 2px solid rgba(0,0,0, 0.6);
+    position: relative;
+    min-width: 400px;
+    height: 500px;
+    background-image: url('../images/flappy_bird_bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow: 5px 4px 8px rgba(0,0,0, 0.6);
+}
+
+#FlappyBirdCanva {
+    overflow: hidden;
+}
+
+#FlappyBirdBird {
+    position: absolute;
+    width: 45px;
+    height: 40px;
+    left: 50px;
+    background-image: url('../images/flappy_bird_bird.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 50px;
+}
+
+#FlappyBirdColumn {
+    bottom: 0;
+    right: 0;
+    left: 400;
+    position: absolute;
+    width: 50px;
+    height: 300px;
+    background-image: url('../images/flappy_bird_c1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: ColumnMove linear 2.5s infinite;
+}
+
+#FlappyBirdColumn2 {
+    right: 0;
+    left: 400;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/flappy_bird_c2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: ColumnMove linear 2.5s infinite;
+}
+
+#FlappyBird button{
+    display: flex;
+    background-color: orange;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0,0,0, 0.6);
+}
+
+@keyframes ColumnMove {
+    0% {
+        left: 400px
+    }
+
+    100% {
+        left: -50px
+    }
+}
+

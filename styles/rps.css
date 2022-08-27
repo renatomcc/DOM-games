@@ -1,0 +1,96 @@
+#Rps {
+    padding: 50px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+#Rps img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.imghover{
+    cursor: pointer;
+}
+.imghover img:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+#rpsComputer {
+    width: 100px;
+    height: 100px;
+}
+
+#rpsComputerChoice {
+    display: none;
+    width: 100px;
+    height: 100px;
+}
+
+#rpsResult{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #ff4242;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#rpsPAButton{
+    display: flex;
+    width: 100px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#rpsUserChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.Rock {
+    background-image: url('../images/rps_rock.png');
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.Paper {
+    background-image: url('../images/rps_paper.png');
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.Scissor {
+    background-image: url('../images/rps_scissors.png');
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+#Rps button{
+    display: none;
+    background-color: orange;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0,0,0, 0.6);
+}
