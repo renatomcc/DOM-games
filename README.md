@@ -15,9 +15,10 @@ You can check the project [here](https://domgames-renatomcc.netlify.app)
 * Genius
 
 ## To-do list
-* Allow 2048 and Flappy Bird to be played on mobile devices
+* Allow 2048 to be played on mobile devices
 * Increase the amount of words in the games Wordle and Hangman
 * Add language options in the games Wordle and Hangman
+* Add a 'Play again' button on Flappy Bird
 
 ### Observation
 All games were created by an original idea, without following any specific tutorial
