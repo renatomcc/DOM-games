@@ -22,9 +22,27 @@ document.getElementById('body').addEventListener('keyup', (e) => {
     }
 })
 
-function startFlappyBird(){
+document.getElementById('FlappyBirdCanva').addEventListener('click', () => {
+    if (birdDead == false) {
+        birdHeight.style.top = (parseInt(getComputedStyle(birdHeight).getPropertyValue('top')) - 50) + 'px';
+        if ((parseInt(getComputedStyle(birdHeight).getPropertyValue('top')) <= 0)) {
+            birdHeight.style.top = 0 + 'px';
+            clearInterval(mainInterval);
+            clearInterval(flappyBirdGravity);
+            column1.style.animation = 'none'
+            column2.style.animation = 'none'
+            birdDead = true;
+        }
+    }
+})
+
+function startFlappyBird() {
     mainInterval = setInterval(randomizeColumns, 2500);
     flappyBirdGravity = setInterval(birdGravity, 40);
+    birdDead = false
+    column1.style.animation = 'ColumnMove linear 2.5s infinite'
+    column2.style.animation = 'ColumnMove linear 2.5s infinite';
+    birdHeight.style.top = 50 + 'px';
 }
 
 function randomizeColumns() {
