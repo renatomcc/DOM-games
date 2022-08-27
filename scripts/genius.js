@@ -8,7 +8,7 @@ let geniusAllowClick = false;
 
 
 //START THE GAME
-function geniusStartGame(){
+function geniusStartGame() {
     geniusGenerateSequence()
     geniusPlaySequence()
     document.getElementById('geniusStartGame').style.display = 'none'
@@ -20,18 +20,18 @@ function geniusGenerateSequence() {
         geniusRandomNumber = Math.floor(Math.random() * 4);
         geniusSequence.push(geniusRandomNumber);
     }
-    console.log(geniusSequence)
+    // console.log(geniusSequence)
 }
 
 //PLAY THE SEQUENCE
 function geniusPlaySequence() {
-    console.log('geniusPlaySequence chamada')
+    // console.log('geniusPlaySequence chamada')
     sequence = setInterval(() => {
-        console.log('interval chamado')
+        // console.log('interval chamado')
         geniusBeep(geniusSequence[geniusCounter]);
         geniusCounter++;
         if (geniusCounter == geniusSequence.length) {
-            console.log('deveria ter limpado')
+            // console.log('deveria ter limpado')
             geniusCounter = 0;
             geniusAllowUserClick();
             clearInterval(sequence);
@@ -81,7 +81,7 @@ function geniusBeep(num) {
 function geniusAllowUserClick() {
     setTimeout(() => {
         geniusAllowClick = true;
-        console.log('ALLOW USER TO CLICK');
+        // console.log('ALLOW USER TO CLICK');
         document.getElementById('geniusYellow').classList.add('hover');
         document.getElementById('geniusRed').classList.add('hover');
         document.getElementById('geniusGreen').classList.add('hover');
@@ -135,7 +135,7 @@ function geniusGetUserSequence(option) {
 
 //COMPARE USERINPUT WITH THE GAME SEQUENCE
 function geniusCompareSequences() {
-    console.log(geniusUserSequence);
+    // console.log(geniusUserSequence);
     if (geniusSequence.join() == geniusUserSequence.join()) {
         document.getElementById('geniusPlayerScore').innerHTML = geniusRoundCounter;
         geniusStartNewRound();
@@ -164,7 +164,20 @@ function geniusPlayAgain() {
     geniusSequence = [];
     geniusUserSequence = [];
     geniusCounter = 0;
-    console.log(`sequence: ${geniusSequence} - roundCounter: ${geniusRoundCounter} - userSequence: ${geniusUserSequence}`);
+    // console.log(`sequence: ${geniusSequence} - roundCounter: ${geniusRoundCounter} - userSequence: ${geniusUserSequence}`);
     geniusGenerateSequence();
     setTimeout(geniusPlaySequence(), 200)
 }
+
+//BACK TO MENU BUTTON IS CLICKED, SO THE GAME STOP
+
+document.getElementById('backToMenuBtn').addEventListener('click', () => {
+    geniusSequence = [];
+    geniusUserSequence = [];
+    geniusRandomNumber;
+    geniusRoundCounter = 1;
+    geniusScore;
+    geniusCounter = 0;
+    geniusAllowClick = false;
+    document.getElementById('geniusStartGame').style.display = 'flex';
+})

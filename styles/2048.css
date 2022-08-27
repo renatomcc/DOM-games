@@ -53,3 +53,10 @@
     background-color:#BBADA0;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
+
+@media only screen and (max-width: 500px) {
+    .game2048Square {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -126,7 +126,9 @@ function hangmanResetBody() {
 }
 
 function hangmanResetWord() {
-    for (i = 0; i < englishWord.length; i++) {
-        document.getElementById(`${i}`).remove();
+    if (englishWord && document.getElementById(`${0}`)!= null) {
+        for (i = 0; i < englishWord.length; i++) {
+            document.getElementById(`${i}`).remove();
+        }
     }
 }

@@ -1,5 +1,4 @@
 .container{
-    min-width: 420px;
     margin: 0;
 }
 #TicTacToe {
@@ -115,3 +114,4 @@
         font-size: 12px;
     }
 }
+

@@ -35,3 +35,10 @@
     background-image: url('../images/cricket.png');
     background-size: contain;
 }
+
+@media only screen and (max-width: 500px) {
+    #memoryContainer div {
+        width: 90px;
+        height: 110px; 
+    }
+}
